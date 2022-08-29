@@ -9,15 +9,16 @@ on:
         
 jobs:
   my-job:
-    if: ${{ inputs.name != 'vinay' }}
+    
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello ${{ inputs.name }}"
+        run: |
+          if [[ "${{inputs.environment}}" != "vinay" ]]; then
+            echo "Hello ${{ inputs.environment }}"
+          else 
+             echo "Hello ${{ inputs.environment }}"  
+          fi
+          exit 0
 
-  my-job1:
-    if: ${{ inputs.name == 'vinay' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: echo "Hello ${{ inputs.name }}"
+        shell: bash

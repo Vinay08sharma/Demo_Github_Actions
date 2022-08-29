@@ -15,9 +15,9 @@ jobs:
       - name: my-step
         run: |
           if [[ "${{inputs.name}}" != "vinay" ]]; then
-            echo "Hello ${{ inputs.name }}"
+            echo "Hello negation"
           else 
-             echo "Hello ${{ inputs.name }}"  
+             echo "Hello else part"  
           fi
           exit 0
 

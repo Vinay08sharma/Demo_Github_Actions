@@ -9,13 +9,8 @@ on:
         
 jobs:
   my-job:
+    if: ${{ inputs.name != 'vinay' }}
     runs-on: ubuntu-latest
-    if: ${{ inputs.name }} != 'vinay'
     steps:
       - name: my-step
         run: echo "Hello ${{ inputs.name }}"
-
-    if: ${{ inputs.name }} == 'vinay'
-    steps:
-      - name: my-step
-        run: echo "Hello ${{ inputs.name }}"   

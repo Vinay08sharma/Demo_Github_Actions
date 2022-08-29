@@ -14,9 +14,7 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello ${{ inputs.name }}"
-        
-  my-job1:
-    runs-on: ubuntu-latest
+
     if: ${{ inputs.name }} == 'vinay'
     steps:
       - name: my-step

@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: my-step
         run: |
-          if [[ "${{inputs.environment}}" != "vinay" ]]; then
-            echo "Hello ${{ inputs.environment }}"
+          if [[ "${{inputs.name}}" != "vinay" ]]; then
+            echo "Hello ${{ inputs.name }}"
           else 
-             echo "Hello ${{ inputs.environment }}"  
+             echo "Hello ${{ inputs.name }}"  
           fi
           exit 0
 
